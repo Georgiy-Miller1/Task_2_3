@@ -9,6 +9,7 @@ namespace Task_2_3
     class Employee
     {
         string name, surname;
+        decimal salary;
         public Employee(string name,string surname)
         {
             this.name = name;
