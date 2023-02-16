@@ -18,7 +18,8 @@ namespace Task_2_3
 
         public decimal Post_assistant()
         {
-            return;
+
+            return salary* 0.8;
         }
 
         public decimal Post_specialist()
