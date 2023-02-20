@@ -21,31 +21,32 @@ namespace Task_2_3
          */
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите имя сотрудника...");
-            string name = Convert.ToString(Console.ReadLine());
+            //создаем экземпляр класса Employee
+            Employee employee = new Employee();
 
+            //Вводим имя сотрудника;
+            Console.WriteLine("Введите имя сотрудника...");
+            //передаем значение в экземпляк класса Employee в поле name;
+            employee.Name = Convert.ToString(Console.ReadLine());
+
+
+            //Вводим фамилию сотрудника;
             Console.WriteLine("Введите фамилию сотрудника...");
-            string surname = Convert.ToString(Console.ReadLine());
+            //передаем значение в экземпляр класса Employee в поле surname;
+            employee.Sur_name = Convert.ToString(Console.ReadLine());
+            
 
             Console.WriteLine("Введите должность сотрудника:1-помощник,2-специалист,3-менеджер");
             int post = Convert.ToInt32(Console.ReadLine());
-            switch (post)
-            {
-                case 1:
-                    Post_assistant();
-                    break;
-                case 2:
-                    Post_specialist();
-                    break;
-                case 3:
-                    Post_manager();
-                    break;
-                default:
-                    break;
-            }
+            //employee.Post_1(post);
 
+            Console.WriteLine("Введите стаж сотрудника:1-1 год,2-от 1 до 5 лет,3-5 лет и больше");
+            int experience = Convert.ToInt32(Console.ReadLine());
+            employee.Post_1(post,experience);
 
-            Employee employee = new Employee(name,surname);
+            Console.WriteLine($"Сотрудник {employee.Name} {employee.Sur_name}");
+            Console.WriteLine($"должность {employee.Post},стаж {employee.Experience}");
+            Console.WriteLine($"К выплате : {employee.Salary}");
 
             Console.ReadKey();
         }
